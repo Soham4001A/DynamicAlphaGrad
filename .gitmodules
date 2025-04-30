@@ -1,3 +1,9 @@
 [submodule "LMA_GPT_Nano"]
 	path = LMA_GPT_Nano
 	url = https://github.com/Soham4001A/LMA_GPT_Nano
+[submodule "pytorch-cifar-DAG"]
+	path = pytorch-cifar-DAG
+	url = https://github.com/Soham4001A/pytorch-cifar-DAG
+[submodule "CleanRLfork"]
+	path = CleanRLfork
+	url = https://github.com/Soham4001A/CleanRLfork
