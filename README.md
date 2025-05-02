@@ -1,6 +1,3 @@
-Thought for a few seconds
-
-
 ## Dynamic‑Alpha Gradient (DAG‑Isotropic) Optimizer
 
 *A drop‑in replacement for `torch.optim.SGD` / `Adam(W)` with automatic α‑control, per‑layer RMS scaling, and global RMS shrink.*
