@@ -7,3 +7,6 @@
 [submodule "CleanRLfork"]
 	path = CleanRLfork
 	url = https://github.com/Soham4001A/CleanRLfork
+[submodule "ViT-LMA"]
+	path = ViT-LMA
+	url = https://github.com/Soham4001A/ViT-LMA
