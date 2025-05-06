@@ -1,12 +1,12 @@
-[submodule "LMA_GPT_Nano"]
+[submodule "GPT_Nano_Recreation"]
 	path = LMA_GPT_Nano
 	url = https://github.com/Soham4001A/LMA_GPT_Nano
-[submodule "pytorch-cifar-DAG"]
+[submodule "CIFAR-10"]
 	path = pytorch-cifar-DAG
 	url = https://github.com/Soham4001A/pytorch-cifar-DAG
-[submodule "CleanRLfork"]
+[submodule "CleanRL"]
 	path = CleanRLfork
 	url = https://github.com/Soham4001A/CleanRLfork
-[submodule "ViT-LMA"]
+[submodule "CIFAR-100"]
 	path = ViT-LMA
 	url = https://github.com/Soham4001A/ViT-LMA
