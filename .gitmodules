@@ -10,3 +10,6 @@
 [submodule "CIFAR-100"]
 	path = CIFAR-100
 	url = https://github.com/Soham4001A/ViT-LMA
+[submodule "BERTv2"]
+	path = BERTv2
+	url = https://github.com/Soham4001A/BERTv2.git
