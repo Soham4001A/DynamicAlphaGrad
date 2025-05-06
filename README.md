@@ -1,7 +1,7 @@
 ## Dynamic‑Alpha Gradient Optimizer
 
 *A drop‑in replacement for `torch.optim.SGD` / `Adam(W)` with automatic α‑control, per‑layer RMS scaling, and global RMS shrink.*
-This repository contains all of the testing code and submodules used for reproducibility of the results discussed in (link soon) along with the PyTorch libarary extension.
+
 ---
 
 DAG lives in
@@ -109,6 +109,7 @@ DAG(
 ### Tips & remarks
 
 * **Momentum works.**  When `momentum>0`, DAG behaves like $\text{SGD}_{\text{mom}}$ with adaptive scalars.
+* This repository contains all of the testing code and submodules used for reproducibility of the results discussed in (link soon) along with the PyTorch libarary extension.
 * **Coupled vs. decoupled weight decay.**  Set `weight_decay=λ` to couple with LR (SGD‑style).
   To mimic AdamW, call `torch.nn.utils.weight_norm` or implement decay manually.
 * **Sparse layers.**  For massive embedding tables combine DAG for dense layers with sparse‑Adam for tables.
