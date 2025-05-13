@@ -4,16 +4,16 @@
 
 ---
 
-DAG lives in
+DynAG lives in
 
 ```text
-optim/sgd.py        # class DAG
+optim/sgd.py        # class DynAG
 ```
 
 and is imported exactly like any PyTorch optimizer:
 
 ```python
-from optim.sgd import DAG
+from optim.sgd import DynAG
 ```
 
 ---
@@ -22,12 +22,12 @@ from optim.sgd import DAG
 
 ```python
 import torch
-from optim.sgd import DAG
+from optim.sgd import DynAG
 
 model = MyNetwork()
 criterion = torch.nn.CrossEntropyLoss()
 
-opt = DAG(
+opt = DynAG(
     model.parameters(),
     lr=3e-4,                # base learning‑rate  η
     weight_decay=1e-2,      # optional L2 ( AdamW‑style if fused=False )
@@ -63,7 +63,7 @@ for epoch in range(E):
 ### Full constructor signature
 
 ```python
-DAG(
+DynAG(
     params,                         # iterable of Tensors / dicts
     lr                = 1e-3,       # η       base LR
     momentum          = 0.0,
@@ -108,11 +108,11 @@ DAG(
 
 ### Tips & remarks
 
-* **Momentum works.**  When `momentum>0`, DAG behaves like $\text{SGD}_{\text{mom}}$ with adaptive scalars.
+* **Momentum works.**  When `momentum>0`, DynAG behaves like $\text{SGD}_{\text{mom}}$ with adaptive scalars.
 * This repository contains all of the testing code and submodules used for reproducibility of the results discussed in (link soon) along with the PyTorch libarary extension.
 * **Coupled vs. decoupled weight decay.**  Set `weight_decay=λ` to couple with LR (SGD‑style).
   To mimic AdamW, call `torch.nn.utils.weight_norm` or implement decay manually.
-* **Sparse layers.**  For massive embedding tables combine DAG for dense layers with sparse‑Adam for tables.
+* **Sparse layers.**  For massive embedding tables combine DynAG for dense layers with sparse‑Adam for tables.
 * **Debugging.**
 
   * Print `opt.s_t`, `opt.k_val`, `layer_state['alpha']` to watch the dials.
@@ -120,4 +120,16 @@ DAG(
 
 ---
 
-Happy training — and may your updates always stay in the Goldilocks zone 🚀
+### 📚 Citation
+
+If you use or reference DynAG in academic or industrial work, please cite this repository for the PyTorch implementation (published paper coming soon):
+
+```bibtex
+@misc{DynAG2025,
+  author       = {Soham Sane},
+  title        = {Dynamic-Alpha Gradient Optimizer (DynAG)},
+  howpublished = {\url{https://github.com/Soham4001A/DynamicAlphaGrad}},
+  year         = {2025},
+  note         = {A gradient optimization algorithm with dynamic α-control and RMS-based update regulation.}
+}
+```
